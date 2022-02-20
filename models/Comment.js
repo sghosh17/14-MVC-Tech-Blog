@@ -42,6 +42,6 @@ const options = {
   modelName: "comment",
 };
 
-comment.init(schema, options);
+Comment.init(schema, options);
 
 module.exports = Comment;

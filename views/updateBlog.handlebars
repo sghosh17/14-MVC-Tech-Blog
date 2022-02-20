@@ -1,0 +1,69 @@
+{{#if loggedIn}}
+  {{#if blogUserSame}}
+    <div class="blog-card">
+      <h2 class="page-title">Update Blog</h2>
+      <form class="form blog-form">
+        <div class="form-group">
+          <label for="blog-title">Title:</label>
+          <input class="form-input" value="{{title}}"  type="text" id="blog-title" />
+        </div>
+        <div class="form-group">
+          <label for="blog-description">Description:</label>
+          <input class="form-input" value= "{{description}}" type="text" id="blog-description" />
+        </div>
+        <input class="form-input" value="{{id}}"  type="hidden" id="blog-id" />
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Update</button>
+          <a href="/api/blogs/delete/{{id}}"><button class="btn btn-primary" type="button">Delete</button></a>
+        </div>
+      </form>
+    </div>
+    <script src="../js/update.js"></script>
+  {{else}}
+    <div class="blog-card">
+      <h2 class="page-title">View Blog</h2>
+      <form class="form blog-form">
+        <div class="form-group">
+          <label for="blog-title">Title:</label>
+          <input class="form-input" value="{{title}}"  type="text" id="blog-title" readonly/>
+        </div>
+        <div class="form-group">
+          <label for="blog-description">Description:</label>
+          <input class="form-input" value= "{{description}}" type="text" id="blog-description" readonly/>
+        </div>
+        <div class="form-group">
+          <label for="blog-description">Created By:</label>
+          <input class="form-input" value= "{{user.username}}" type="text" id="blog-description" readonly/>
+        </div>
+        <div class="form-group">
+          <label for="blog-description">Created On:</label>
+          <input class="form-input" value= "{{create_date}}" type="text" id="blog-description" readonly/>
+        </div>
+      </form>
+    </div>
+  {{/if}}
+  
+{{else}}
+  <div class="blog-card">
+    <h2 class="page-title">View Blog</h2>
+    <form class="form blog-form">
+      <div class="form-group">
+        <label for="blog-title">Title:</label>
+        <input class="form-input" value="{{title}}"  type="text" id="blog-title" readonly/>
+      </div>
+      <div class="form-group">
+        <label for="blog-description">Description:</label>
+        <input class="form-input" value= "{{description}}" type="text" id="blog-description" readonly/>
+      </div>
+      <div class="form-group">
+        <label for="blog-description">Created By:</label>
+        <input class="form-input" value= "{{user.username}}" type="text" id="blog-description" readonly/>
+      </div>
+      <div class="form-group">
+        <label for="blog-description">Created On:</label>
+        <input class="form-input" value= "{{create_date}}" type="text" id="blog-description" readonly/>
+      </div>
+    </form>
+  </div>
+{{/if}}
+  

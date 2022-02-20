@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
 
-class Blogs extends Model {}
+class Blog extends Model {}
 
 const schema = {
   id: {

@@ -33,6 +33,6 @@ const options = {
   modelName: "user",
 };
 
-user.init(schema, options);
+User.init(schema, options);
 
 module.exports = User;

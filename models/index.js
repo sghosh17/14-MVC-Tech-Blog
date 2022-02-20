@@ -19,4 +19,4 @@ Comment.belongsTo(Blog, {
   foreignKey: "blog_id",
 });
 
-module.export = { User, Blog, Comment };
+module.exports = { User, Blog, Comment };
