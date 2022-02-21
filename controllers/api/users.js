@@ -56,6 +56,12 @@ const signup = async (req, res) => {
 
     await User.create(payload);
 
+    const userFromDB = await User.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
+
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.username = req.body.username;
