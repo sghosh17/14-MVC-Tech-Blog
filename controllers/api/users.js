@@ -59,6 +59,7 @@ const signup = async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.username = req.body.username;
+      req.session.userid = userFromDB.get("id");
 
       return res.json({ message: "Sign up success" });
     });
